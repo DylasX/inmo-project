@@ -12,7 +12,7 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import theme from '../styles/theme';
-import { WrapperHeroText, WrapperImageHero } from './index.styles';
+import { WrapperHeroText, WrapperImageHero } from '../styles/index.styles';
 import Building from '../assets/images/home/buildings.svg';
 import HouseList from '../components/houseList/houseList';
 import Search from '@mui/icons-material/Search';
