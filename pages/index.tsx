@@ -119,7 +119,7 @@ const Home: NextPage = () => {
             </Grid2>
           ))}
         </Grid2>
-        <Grid2 container spacing={2}>
+        {/* <Grid2 container spacing={2}>
           <Grid2 xs={12}>
             <Box
               sx={{
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
               <Divider />
             </Box>
           </Grid2>
-        </Grid2>
+        </Grid2> */}
       </Container>
     </div>
   );
