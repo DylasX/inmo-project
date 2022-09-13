@@ -5,6 +5,8 @@ import {
   Container,
   Box,
   Grid,
+  InputAdornment,
+  Divider,
 } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import type { NextPage } from 'next';
@@ -13,7 +15,8 @@ import theme from '../styles/theme';
 import { WrapperHeroText, WrapperImageHero } from './index.styles';
 import Building from '../assets/images/home/buildings.svg';
 import HouseList from '../components/houseList/houseList';
-
+import Search from '@mui/icons-material/Search';
+import Logo from '../assets/images/logo.svg';
 const Home: NextPage = () => {
   return (
     <div>
@@ -36,19 +39,9 @@ const Home: NextPage = () => {
           }}
         />
         <WrapperHeroText>
-          <Typography
-            component={'h1'}
-            sx={{
-              color: theme.palette.primary.main,
-              textTransform: 'uppercase',
-              textAlign: 'center',
-              fontWeight: 'bold',
-              fontSize: '1.5rem',
-            }}
-          >
-            Inmo Project
+          <Typography component={'h1'} sx={{ fontSize: '1.8rem' }}>
+            Busca tu inmueble
           </Typography>
-          <Typography component={'h2'}>Busca tu inmueble</Typography>
           <Grid2
             container
             sx={{
@@ -59,9 +52,9 @@ const Home: NextPage = () => {
           >
             <Grid2
               xs={10}
-              md={2}
-              xl={2}
-              lg={2}
+              md={6}
+              xl={6}
+              lg={6}
               sx={{
                 textAlign: 'center',
                 margin: '10px',
@@ -74,41 +67,16 @@ const Home: NextPage = () => {
                   color: '#000',
                   borderRadius: '5px',
                 }}
-                placeholder='Escribe el codigo'
-              />
-            </Grid2>
-            <Grid2
-              xs={10}
-              md={2}
-              xl={2}
-              lg={2}
-              sx={{
-                textAlign: 'center',
-                margin: '10px',
-              }}
-            >
-              <TextField
-                fullWidth
-                sx={{
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  borderRadius: '5px',
+                placeholder='Escribe el codigo, municipio o barrio'
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position='start'>
+                      <Search />
+                    </InputAdornment>
+                  ),
                 }}
-                placeholder='Escribe el municipio'
               />
             </Grid2>
-          </Grid2>
-          <Grid2
-            container
-            sx={{
-              width: '100%',
-              justifyContent: 'center',
-              marginTop: '25px',
-            }}
-          >
-            <Button variant='outlined' size='large'>
-              Buscar
-            </Button>
           </Grid2>
         </WrapperHeroText>
       </WrapperImageHero>
@@ -118,20 +86,29 @@ const Home: NextPage = () => {
             <Box
               sx={{
                 textAlign: 'center',
-                marginTop: '5%',
-                marginBottom: '5%',
+                marginTop: theme.spacing(3),
+                marginBottom: theme.spacing(3),
               }}
             >
               <Typography
                 component={'h2'}
                 sx={{
-                  fontWeight: 'bold',
-                  fontSize: '1.3rem',
+                  fontWeight: '400',
+                  fontSize: '1.5rem',
                 }}
               >
+                <Box>
+                  <Logo
+                    style={{
+                      fill: '#000',
+                      width: '50px',
+                    }}
+                  />
+                  <Typography>Inmo Project</Typography>
+                </Box>
                 Nuestros Inmuebles
               </Typography>
-              <hr />
+              <Divider />
             </Box>
           </Grid2>
         </Grid2>
@@ -141,6 +118,28 @@ const Home: NextPage = () => {
               <HouseList></HouseList>
             </Grid2>
           ))}
+        </Grid2>
+        <Grid2 container spacing={2}>
+          <Grid2 xs={12}>
+            <Box
+              sx={{
+                textAlign: 'center',
+                marginTop: theme.spacing(3),
+                marginBottom: theme.spacing(3),
+              }}
+            >
+              <Typography
+                component={'h2'}
+                sx={{
+                  fontWeight: '400',
+                  fontSize: '1.5rem',
+                }}
+              >
+                Nosotros
+              </Typography>
+              <Divider />
+            </Box>
+          </Grid2>
         </Grid2>
       </Container>
     </div>

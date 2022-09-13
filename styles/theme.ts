@@ -9,6 +9,9 @@ const theme = createTheme({
     primary: {
       main: common['white'],
     },
+    secondary: {
+      main: '#313131',
+    },
   },
   typography: {
     fontFamily: ['Raleway', 'sans-serif'].join(','),

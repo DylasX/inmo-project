@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import React, { FunctionComponent } from 'react';
+import theme from '../../styles/theme';
 
 const HouseList: FunctionComponent = () => (
   <Card sx={{ maxWidth: 345, margin: '10px' }}>
@@ -18,16 +19,24 @@ const HouseList: FunctionComponent = () => (
     />
     <CardContent>
       <Typography gutterBottom variant='h5' component='div'>
-        Lizard
+        Casa
       </Typography>
       <Typography variant='body2' color='text.secondary'>
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+        Excelente Casa
       </Typography>
     </CardContent>
-    <CardActions>
-      <Button size='small'>Share</Button>
-      <Button size='small'>Learn More</Button>
+    <CardActions sx={{ flexDirection: 'row-reverse' }}>
+      <Button
+        size='small'
+        color='secondary'
+        variant='outlined'
+        sx={{ marginLeft: theme.spacing(1) }}
+      >
+        Ver mas
+      </Button>
+      <Button size='small' color='secondary' variant='outlined'>
+        Me gusta
+      </Button>
     </CardActions>
   </Card>
 );
